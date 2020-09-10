@@ -26,7 +26,7 @@ export default class Cart {
         return this._sum;
     }
 
-    removeProduct( id : number) {
+    removeProduct( id : number) : void{
         const index = this._items.findIndex((obj) => {
             return obj.id === id;
         });
