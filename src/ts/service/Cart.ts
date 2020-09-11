@@ -2,9 +2,7 @@ import Buyable from '../domain/Buyable';
 
 export default class Cart {
     private _items: Buyable[] = [];
-     _sum!: number; // если убрать ! typescript начинает жаловаться на sum упоминаяя конструктор...которого нет даже?
-  // если убрать ! typescript начинает жаловаться на sum упоминаяя конструктор...которого нет даже?
-    //  как объявить свойство класса без восклицательного знака?
+    private _sum: number = 0;
 
     add(item: Buyable): void {
         this._items.push(item);
@@ -27,9 +25,7 @@ export default class Cart {
     }
 
     removeProduct( id : number) : void{
-        const index = this._items.findIndex((obj) => {
-            return obj.id === id;
-        });
+        const index = this._items.findIndex((obj) => (obj.id === id));
         this._items.splice(index,index + 1);
     }
 
@@ -37,3 +33,6 @@ export default class Cart {
         return [...this._items]; 
     }
 }
+
+
+

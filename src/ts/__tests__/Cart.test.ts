@@ -18,16 +18,14 @@ describe('check work class Cart', () => {
     const cart = new Cart();
     cart.add(new Book(1001, 'War and Piece', 'Leo Tolstoy', 2000, 1225));
     cart.add(new MusicAlbum(1008, 'Meteora', 'Linkin Park', 900));
-    cart.allPrice();
-    const received = cart._sum;
+    const received = cart.allPrice();
     expect(received).toEqual(2900);
   });
   test('return sum of all prices with discount', () => {
     const cart = new Cart();
     cart.add(new Book(1001, 'War and Piece', 'Leo Tolstoy', 2000, 1225));
     cart.add(new MusicAlbum(1008, 'Meteora', 'Linkin Park', 900));
-    cart.allPricewDiscound(10);
-    const received = cart._sum;
+    const received = cart.allPricewDiscound(10);
     expect(received).toEqual(2610);
   });
   test('remove one product', () => {
